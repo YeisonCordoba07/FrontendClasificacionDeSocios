@@ -28,6 +28,8 @@ const MainConfigurarCriterios = () => {
         }
     };
 
+    const [verConfirmacion, setVerConfirmacion] = useState(false);
+
     return (
 
         <div className="flex flex-col px-5 py-5 font-m2 m-auto h-screen">
@@ -101,8 +103,12 @@ const MainConfigurarCriterios = () => {
                 </div>
 
                 <div className="flex justify-evenly mt-10 w-full">
-                    <BlueButton text="Guardar Información" onClick={crearGrupo} />
+                    <BlueButton text="Guardar Información" onClick={()=> {setVerConfirmacion(true)}} />
                     <BlueButton text="Reiniciar Proceso" />
+                </div>
+
+                <div className="mt-20">
+                    {verConfirmacion && <h4 className="text-lime-500 text-xl">Exito al crear el grupo</h4>}
                 </div>
 
             </div>
